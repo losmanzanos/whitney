@@ -1,0 +1,1895 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Whitney A. Lovett, MA, LPC — Lovett Counseling &amp; Consulting · Denver</title>
+<meta name="description" content="Whitney A. Lovett, MA, LPC. Trauma-informed therapy and consulting for adults, couples, and families. Warm, direct, and grounded in 14 years of clinical practice. Online across Colorado." />
+
+<!-- Favicons (universal set) -->
+<link rel="icon"          type="image/svg+xml" href="favicon.svg" />
+<link rel="icon"          type="image/x-icon"  href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180"    href="apple-touch-icon.png" />
+<link rel="manifest"      href="site.webmanifest" />
+<meta name="theme-color"  content="#ac672a" />
+
+<!-- Type pairing chosen to evoke the Caslon + P22 Underground vibe of the reference -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Jost:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   TOKENS
+   ===================================================================== */
+:root {
+  --cream:        #f1ebe0;
+  --cream-soft:   #ece3d3;
+  --cream-warm:   #ebe2d0;
+  --terracotta:   #ac672a;
+  --terracotta-2: #c98052;
+  --ink:          #2c2d36;
+  --ink-soft:     #4b4d59;
+  --ink-mute:     #76798a;
+  --dusty:        #a9b1b6;
+  --dusty-deep:   #8e979d;
+  --rose:         #d4607a;
+  --moss:         #5d6b4e;
+
+  --serif:  "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --serif-display: "DM Serif Display", "Cormorant Garamond", Georgia, serif;
+  --sans:   "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --maxw: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-y: clamp(80px, 11vw, 160px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: transparent; color: inherit; }
+
+/* a paper-grain noise we use across cream sections */
+.grain::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(rgba(44,45,54,.045) 1px, transparent 1px),
+    radial-gradient(rgba(44,45,54,.03) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* utility */
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.btn-frame {
+  display: inline-block;
+  padding: 18px 34px;
+  border: 1.5px solid var(--ink);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-frame::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--ink);
+  transform: translateY(101%);
+  transition: transform .35s cubic-bezier(.7,0,.2,1);
+  z-index: 0;
+}
+.btn-frame span { position: relative; z-index: 1; }
+.btn-frame:hover { color: var(--cream); }
+.btn-frame:hover::before { transform: translateY(0); }
+
+/* =====================================================================
+   HEADER  (terracotta band, mark + sign-in like Boost)
+   ===================================================================== */
+.bar {
+  background: var(--terracotta);
+  color: #fff;
+  position: relative;
+  z-index: 50;
+}
+.bar-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 26px var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.signin {
+  font-size: 12px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: .9;
+}
+.signin:hover { opacity: 1; }
+
+.brand {
+  text-align: center;
+  line-height: 1;
+}
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px; height: 36px;
+  margin: 0 auto 4px;
+}
+.brand-mark svg { width: 100%; height: 100%; display: block; }
+.brand-name {
+  font-family: var(--serif-display);
+  font-size: clamp(34px, 4vw, 50px);
+  letter-spacing: .01em;
+  font-weight: 400;
+  color: #fff;
+}
+.brand-tag {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: .45em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
+  margin-top: 2px;
+}
+
+.bar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 22px;
+  font-size: 18px;
+}
+.icon-link { width: 22px; height: 22px; display: inline-flex; opacity: .9; }
+.icon-link:hover { opacity: 1; }
+.icon-link svg { width: 100%; height: 100%; }
+
+/* secondary nav (under terracotta band) */
+.subnav {
+  position: sticky; top: 0;
+  z-index: 40;
+  background: var(--cream);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.subnav.is-stuck {
+  box-shadow: 0 2px 22px rgba(44,45,54,.07);
+  border-color: rgba(44,45,54,.06);
+}
+.subnav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 22px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.subnav .links {
+  display: flex; gap: 38px; flex-wrap: wrap;
+  font-size: 13px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+}
+.subnav .links a { position: relative; padding-bottom: 4px; }
+.subnav .links a::after {
+  content:"";
+  position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1.5px; background: var(--terracotta);
+  transition: width .28s ease;
+}
+.subnav .links a:hover::after { width: 100%; }
+.subnav .right-links {
+  display: flex; gap: 28px;
+  font-size: 13px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2a5b8e;
+}
+.subnav .right-links a:hover { color: var(--terracotta); }
+
+/* On desktop, .menu-drawer is invisible — its children are laid out inline */
+.menu-drawer {
+  display: contents;
+}
+
+/* hamburger (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  width: 34px; height: 24px;
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.menu-toggle span {
+  position: absolute; left: 0; right: 0;
+  height: 1.8px;
+  background: var(--ink);
+  transition: transform .3s cubic-bezier(.7,.0,.2,1), opacity .2s;
+}
+.menu-toggle span:nth-child(1) { top: 2px; }
+.menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-toggle span:nth-child(3) { bottom: 2px; }
+.subnav.is-open .menu-toggle span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.subnav.is-open .menu-toggle span:nth-child(2) { opacity: 0; }
+.subnav.is-open .menu-toggle span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero {
+  position: relative;
+  background: var(--cream);
+  padding: 60px 0 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  min-height: clamp(580px, 86vh, 880px);
+}
+
+/* Background line-drawing snake — sits very faded behind hero like the line drawing on Boost */
+.hero-line-art {
+  position: absolute;
+  left: -8%;
+  top: -5%;
+  width: 64%;
+  opacity: .14;
+  filter: grayscale(.4) hue-rotate(190deg) brightness(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-line-art img { width: 100%; }
+
+.hero-figure {
+  position: absolute;
+  left: 4%;
+  bottom: -2%;
+  width: clamp(320px, 38%, 520px);
+  z-index: 3;
+  filter: contrast(1.05) saturate(.9);
+}
+.hero-figure img { width: 100%; }
+
+/* the diagonal stripe accent behind the dancers like Boost's pattern */
+.hero-stripe {
+  position: absolute;
+  left: 12%;
+  top: 26%;
+  width: 360px; height: 460px;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(172,103,42,.13) 0 1px,
+      transparent 1px 9px);
+  z-index: 1;
+  transform: rotate(-2deg);
+}
+
+/* terracotta organic blob (mimics Boost's circular brushstroke) */
+.hero-blob {
+  position: absolute;
+  right: 8%;
+  bottom: 6%;
+  width: clamp(180px, 22vw, 310px);
+  aspect-ratio: 1.05/1;
+  background: var(--terracotta);
+  border-radius: 60% 52% 46% 58% / 50% 60% 40% 50%;
+  opacity: .92;
+  z-index: 2;
+  filter: url(#brush) blur(.2px);
+}
+.hero-blob::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,.12) 1.5px, transparent 1.5px),
+    radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 11px 11px, 5px 5px;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+.hero-headline {
+  position: absolute;
+  right: 6%;
+  top: 16%;
+  width: 44%;
+  z-index: 4;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(28px, 3.6vw, 56px);
+  line-height: 1.05;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.hero-headline em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--terracotta);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.hero-sub {
+  position: absolute;
+  right: 6%;
+  top: calc(16% + clamp(28px, 3.6vw, 56px) * 4.6);
+  width: 38%;
+  z-index: 4;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 26px 0 0;
+  max-width: 460px;
+}
+
+.hero-cta-row {
+  position: absolute;
+  right: 6%;
+  bottom: 9%;
+  display: flex; gap: 28px; align-items: center;
+  z-index: 4;
+}
+.hero-scroll {
+  font-size: 11px; letter-spacing: .4em;
+  text-transform: uppercase;
+  display: inline-flex; flex-direction: column; gap: 10px; align-items: center;
+  color: var(--ink-soft);
+  cursor: pointer;
+  background: transparent; border: 0; padding: 6px 4px;
+  transition: color .2s;
+}
+.hero-scroll:hover { color: var(--terracotta); }
+.hero-scroll .arrow {
+  width: 18px; height: 22px;
+  display: inline-block; position: relative;
+}
+.hero-scroll .arrow::before,
+.hero-scroll .arrow::after {
+  content: "";
+  position: absolute; left: 50%;
+  width: 1.5px; height: 14px;
+  background: currentColor;
+  border-radius: 1px;
+  transform-origin: top center;
+}
+.hero-scroll .arrow::before { transform: translateX(-50%) rotate(0); top: 0; }
+/* chevron tip */
+.hero-scroll .arrow span {
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 10px; height: 10px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateX(-50%) rotate(45deg);
+}
+.hero-scroll .arrow {
+  animation: bounce-y 1.7s ease-in-out infinite;
+}
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0); }
+  45%      { transform: translateY(8px); }
+  60%      { transform: translateY(2px); }
+}
+
+/* =====================================================================
+   MISSION
+   ===================================================================== */
+.mission {
+  position: relative;
+  padding: var(--section-y) 0;
+  overflow: hidden;
+}
+.mission-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 90px 1.1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+.mission-mark { padding-top: 6px; }
+.mission-mark svg { width: 70px; height: 60px; color: var(--ink); }
+
+.mission h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(40px, 4.6vw, 68px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 28px;
+  line-height: 1;
+}
+.mission p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0 0 18px;
+  max-width: 460px;
+}
+.mission-img {
+  position: relative;
+}
+.mission-img img.leaf {
+  position: absolute;
+  right: -30px; top: -50px;
+  width: 230px;
+  transform: rotate(8deg);
+  z-index: 1;
+}
+.mission-img .stamp {
+  position: relative;
+  width: 78%;
+  margin-left: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, rgba(172,103,42,.18), rgba(212,96,122,.22)),
+    var(--cream-soft);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(44,45,54,.4);
+  filter: contrast(1.05);
+}
+.mission-img .stamp img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  filter: sepia(.18) contrast(1.1) saturate(.9);
+}
+.mission-img .stamp::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,.18), transparent 60%);
+}
+
+/* a pair of long brush-stroke diagonals like Boost (terracotta lines crossing the gutter) */
+.mission-strokes {
+  position: absolute;
+  right: -10%;
+  bottom: -20%;
+  width: 80%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .85;
+}
+.mission-strokes svg { width: 100%; height: auto; }
+
+/* =====================================================================
+   QUOTE / TESTIMONIAL
+   ===================================================================== */
+.quote {
+  position: relative;
+  padding: var(--section-y) 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+.quote-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+}
+
+.runner {
+  position: absolute;
+  left: -2%;
+  bottom: 0;
+  width: 240px;
+  z-index: 4;
+  filter: grayscale(.1) contrast(1.05);
+  pointer-events: none;
+}
+
+.quote-art {
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 1.05/1;
+  display: flex; align-items: center; justify-content: center;
+}
+.hex-mask {
+  width: 100%; height: 100%;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hex-mask.moon  { background-image: url('images/decor-moon.png'); background-color: #2a3036; }
+.hex-mask::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 60%);
+}
+
+.terra-stroke {
+  position: absolute;
+  right: -8%;
+  top: -8%;
+  width: 78%;
+  height: 88%;
+  background: var(--terracotta);
+  clip-path: polygon(20% 0, 100% 8%, 92% 95%, 56% 100%, 0 60%);
+  z-index: 1;
+  opacity: .92;
+  filter: url(#brush);
+}
+.terra-stroke::before {
+  content:""; position:absolute; inset:0;
+  background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: 6px 6px;
+  mix-blend-mode: screen;
+}
+
+.quote-text {
+  position: relative;
+  z-index: 3;
+  padding-left: 0;
+}
+.quote-text blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(36px, 4.4vw, 64px);
+  line-height: 1.05;
+  color: var(--ink);
+}
+.quote-text cite {
+  display: block;
+  margin-top: 36px;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.quote-scribble {
+  position: absolute;
+  right: -2%;
+  bottom: -8%;
+  width: 130px;
+  opacity: .7;
+  z-index: 0;
+}
+
+/* =====================================================================
+   THREE C's
+   ===================================================================== */
+.threes {
+  position: relative;
+  padding: var(--section-y) 0;
+  background: var(--cream-soft);
+  overflow: hidden;
+}
+.threes::before {
+  content:"";
+  position:absolute; inset:0;
+  background-image: radial-gradient(rgba(44,45,54,.05) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+.threes-head {
+  max-width: var(--maxw);
+  margin: 0 auto 70px;
+  padding: 0 var(--gutter);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.threes-head h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(46px, 5.2vw, 80px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 14px;
+}
+.threes-head p {
+  font-size: 14px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 38px;
+}
+
+.threes-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+.cee {
+  position: relative;
+  padding-top: 30px;
+}
+.cee-num {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 90px;
+  line-height: 1;
+  color: var(--terracotta);
+  opacity: .25;
+  position: absolute;
+  top: -40px; left: -10px;
+  user-select: none;
+}
+.cee h3 {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 22px;
+  position: relative;
+}
+.cee h3::after {
+  content:""; display:block;
+  width: 26px; height: 2px;
+  background: var(--terracotta);
+  margin-top: 14px;
+}
+.cee p {
+  margin: 0 0 18px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: .82;
+}
+.cee .more {
+  display: inline-block;
+  margin-top: 12px;
+  border: 1.5px solid var(--ink);
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background .25s, color .25s;
+}
+.cee .more:hover { background: var(--ink); color: var(--cream); }
+
+.threes-flower {
+  position: absolute;
+  right: -6%;
+  top: 0;
+  width: 320px;
+  opacity: .55;
+  pointer-events: none;
+  filter: sepia(.2);
+  z-index: 1;
+}
+
+/* =====================================================================
+   NEW RELEASES
+   ===================================================================== */
+.releases {
+  position: relative;
+  padding: var(--section-y) 0;
+  background-color: #2c2d36;
+  background-image:
+    linear-gradient(rgba(44,45,54,.86), rgba(44,45,54,.94)),
+    url('images/bg-floral.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--cream);
+  overflow: hidden;
+}
+.releases-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 2;
+}
+.releases-head {
+  display: flex; justify-content: space-between; align-items: end;
+  border-bottom: 1px solid rgba(241,235,224,.18);
+  padding-bottom: 22px;
+  margin-bottom: 60px;
+}
+.releases-head h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 400;
+  margin: 0;
+}
+.releases-head .all {
+  font-size: 12px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+}
+.releases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+.post {
+  position: relative;
+  background: rgba(241,235,224,.04);
+  border: 1px solid rgba(241,235,224,.12);
+  padding: 0;
+  transition: transform .35s ease, background .25s;
+}
+.post:hover {
+  transform: translateY(-6px);
+  background: rgba(241,235,224,.07);
+}
+.post .post-img {
+  width: 100%; aspect-ratio: 4/3;
+  background-size: cover; background-position: center;
+  border-bottom: 1px solid rgba(241,235,224,.1);
+  filter: saturate(.8) contrast(1.05);
+}
+.post .post-body { padding: 26px 28px 28px; }
+.post .date {
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--terracotta-2);
+}
+.post h4 {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 14px 0 14px;
+  color: var(--cream);
+}
+.post p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(241,235,224,.78);
+}
+.post .read {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--terracotta-2);
+}
+.post .read::after { content: " →"; }
+
+/* =====================================================================
+   PROCESS
+   ===================================================================== */
+.process {
+  position: relative;
+  padding: calc(var(--section-y) + 30px) 0 var(--section-y);
+  overflow: hidden;
+  background: var(--cream);
+}
+.process-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/bg-sky.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: .35;
+  filter: saturate(.7);
+  z-index: 0;
+}
+.process-bg::after {
+  content:"";
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, var(--cream) 0%, rgba(241,235,224,.4) 30%, rgba(241,235,224,.4) 70%, var(--cream) 100%);
+}
+.process-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+.process h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(46px, 5.2vw, 80px);
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+.process .sub {
+  font-size: 13px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 70px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+  position: relative;
+}
+.steps::before {
+  content:"";
+  position: absolute;
+  left: 8%; right: 8%;
+  top: 35px;
+  height: 1px;
+  background: repeating-linear-gradient(to right, var(--terracotta) 0 6px, transparent 6px 14px);
+  z-index: 0;
+}
+.step {
+  position: relative;
+  padding: 0 8px;
+  z-index: 1;
+}
+.step .dot {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.5px solid var(--terracotta);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--terracotta);
+  margin-bottom: 26px;
+}
+.step h3 {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0 0 12px;
+  letter-spacing: .01em;
+}
+.step ul {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.step li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  padding-left: 18px;
+  position: relative;
+}
+.step li + li { margin-top: 6px; }
+.step li::before {
+  content:""; position: absolute;
+  left: 0; top: 12px;
+  width: 8px; height: 1px; background: var(--terracotta);
+}
+
+/* =====================================================================
+   CONTACT
+   ===================================================================== */
+.contact {
+  position: relative;
+  background: var(--dusty);
+  color: var(--ink);
+  padding: var(--section-y) 0;
+  overflow: hidden;
+}
+.contact::before {
+  content:"";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+    radial-gradient(rgba(44,45,54,.08) 1px, transparent 1px);
+  background-size: 4px 4px, 9px 9px;
+  background-position: 0 0, 2px 3px;
+  mix-blend-mode: multiply;
+  opacity: .6;
+  pointer-events: none;
+}
+.contact-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+.contact-art {
+  position: relative;
+  isolation: isolate;
+}
+.contact-figure {
+  position: relative;
+  width: 86%;
+  margin: 0 auto;
+  filter: contrast(1.05) saturate(.95);
+  isolation: isolate;
+}
+.contact-figure img { position: relative; z-index: 2; width: 100%; }
+.contact-figure::before {
+  content:"";
+  position: absolute;
+  left: -8%; top: 4%;
+  width: 92%; height: 84%;
+  background: var(--terracotta);
+  border-radius: 60% 50% 56% 46% / 50% 60% 40% 50%;
+  opacity: .9;
+  z-index: 1;
+  filter: url(#brush);
+}
+.contact-figure::after {
+  content:"";
+  position: absolute;
+  right: -6%; bottom: 8%;
+  width: 70%; height: 1.5px;
+  background: repeating-linear-gradient(to right, var(--ink) 0 6px, transparent 6px 14px);
+  z-index: 0;
+}
+
+.contact h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(48px, 5.4vw, 80px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 22px;
+  line-height: 1;
+  color: var(--ink);
+}
+.contact p.lede {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 540px;
+  color: var(--ink-soft);
+}
+.contact-meta {
+  list-style: none; padding: 0; margin: 0 0 38px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 22px;
+  border-top: 1px solid rgba(44,45,54,.18);
+  border-bottom: 1px solid rgba(44,45,54,.18);
+  padding: 22px 0;
+}
+.contact-meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contact-meta strong {
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: .7;
+}
+.contact-meta a, .contact-meta span {
+  font-family: var(--serif-display);
+  font-size: 19px;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.1;
+  font-style: italic;
+}
+.contact-meta a:hover { color: var(--terracotta); }
+.contact-meta small {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  margin-top: 2px;
+}
+.contact form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+.contact label {
+  font-size: 11px; letter-spacing: .3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px;
+}
+.contact .field-full { grid-column: 1 / -1; }
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea,
+.contact select {
+  width: 100%;
+  background: rgba(255,255,255,.5);
+  border: 1.5px solid rgba(44,45,54,.25);
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  border-radius: 0;
+  transition: border-color .2s, background .2s;
+}
+.contact input:focus,
+.contact textarea:focus,
+.contact select:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  background: rgba(255,255,255,.78);
+}
+.contact textarea { min-height: 130px; resize: vertical; }
+.contact .send {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 18px 50px;
+  font-size: 13px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  justify-self: start;
+  grid-column: 1;
+  margin-top: 12px;
+  transition: background .25s;
+}
+.contact .send:hover { background: var(--terracotta); }
+
+/* =====================================================================
+   PARTNERS
+   ===================================================================== */
+.partners {
+  background: var(--cream);
+  padding: 90px 0 110px;
+  position: relative;
+}
+.partners h3 {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 60px;
+}
+.partners-row {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  align-items: center;
+}
+.client {
+  font-family: var(--serif-display);
+  font-style: italic;
+  text-align: center;
+  font-size: 22px;
+  color: var(--ink-mute);
+  border: 1px solid rgba(44,45,54,.12);
+  padding: 24px 14px;
+  letter-spacing: .04em;
+  transition: border-color .2s, color .2s;
+}
+.client:hover { color: var(--terracotta); border-color: var(--terracotta); }
+.client small {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  opacity: .7;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.foot {
+  background: var(--ink);
+  color: var(--cream-soft);
+  padding: 60px 0 28px;
+}
+.foot-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.foot h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 18px;
+  color: var(--terracotta-2);
+}
+.foot ul { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.foot li + li { margin-top: 8px; }
+.foot a:hover { color: var(--terracotta-2); }
+.foot .lockup {
+  font-family: var(--serif-display);
+  font-size: 32px;
+  letter-spacing: .02em;
+  margin-bottom: 14px;
+}
+.foot .blurb {
+  font-size: 14px;
+  color: rgba(241,235,224,.7);
+  max-width: 320px;
+  line-height: 1.6;
+}
+.foot-bottom {
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(241,235,224,.12);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: rgba(241,235,224,.5);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =====================================================================
+   PARALLAX & ANIMATION HOOKS
+   ===================================================================== */
+.parallax { will-change: transform; }
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* a sticky-note "leaf" element that sits floating between sections */
+.sticker-bridge {
+  position: relative;
+  height: 0;
+  overflow: visible;
+  z-index: 6;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.float-leaf {
+  position: absolute;
+  width: 220px;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 22px 28px rgba(44,45,54,.22));
+  transform: rotate(-9deg);
+}
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 980px) {
+  .mission-inner { grid-template-columns: 1fr; gap: 30px; }
+  .mission-mark  { display: none; }
+  .quote-inner   { grid-template-columns: 1fr; }
+  .threes-grid   { grid-template-columns: 1fr; gap: 40px; }
+  .steps         { grid-template-columns: 1fr; gap: 24px; }
+  .steps::before { display: none; }
+  .releases-grid { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+  .contact form  { grid-template-columns: 1fr; }
+  .foot-inner    { grid-template-columns: 1fr 1fr; }
+  .partners-row  { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .runner        { display: none; }
+  .threes-flower { width: 220px; opacity: .35; }
+
+  /* sticker bridge would overlap text on narrow screens */
+  .sticker-bridge { display: none; }
+
+  /* mission leaf — keep it well INSIDE the image bounds, never above */
+  .mission-img { padding-top: 22px; }
+  .mission-img .leaf {
+    position: absolute;
+    width: 110px;
+    right: -6px;
+    top: 0;          /* sits inside the image cell — never above into text */
+    z-index: 2;
+  }
+  .mission-img .stamp { width: 78%; max-width: 360px; }
+
+  .contact-meta { grid-template-columns: 1fr; gap: 18px; padding: 22px 0; }
+
+  /* CONTACT MOBILE — figure becomes a small accent floating top-right, NOT a section of its own */
+  .contact-inner { position: relative; }
+  .contact-art {
+    position: absolute;
+    top: -20px; right: 0;
+    width: 130px; height: auto;
+    margin: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .contact-figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+  .contact-figure::before {
+    width: 90%; height: 80%;
+    left: -10px; top: 6px;
+    opacity: .85;
+  }
+  .contact-figure::after { display: none; }
+  .contact h2 {
+    font-size: clamp(38px, 9.5vw, 52px);
+    padding-right: 110px; /* leave room for the floating figure */
+  }
+
+  /* HERO REWORK — text overlays a smaller, ghosted figure */
+  .hero { padding-top: 40px; }
+  .hero-inner { min-height: auto; padding: 0 var(--gutter); }
+  .hero-figure {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-figure img {
+    width: auto;
+    max-height: 85%;
+    max-width: 78%;
+    opacity: .42;
+    filter: contrast(1.04) saturate(.9);
+  }
+  .hero-headline {
+    position: relative;
+    width: 100%;
+    right: auto; top: auto;
+    padding: 50px 0 14px;
+    font-size: clamp(34px, 9vw, 52px);
+    z-index: 4;
+    text-shadow: 0 1px 0 rgba(241,235,224,.4);
+  }
+  .hero-sub {
+    position: relative;
+    width: 100%;
+    right: auto; top: auto;
+    z-index: 4;
+    margin: 0 0 28px;
+    max-width: none;
+    font-size: 15px;
+  }
+  .hero-cta-row {
+    position: relative;
+    right: auto; bottom: auto;
+    padding: 0 0 80px;
+    flex-wrap: wrap;
+    gap: 22px;
+    z-index: 4;
+  }
+  .hero-blob {
+    right: -8%; bottom: -4%;
+    width: 220px;
+    opacity: .8;
+    z-index: 2;
+  }
+  .hero-stripe { display: none; }
+  .hero-line-art { width: 130%; left: -25%; opacity: .08; }
+
+  /* HAMBURGER MENU MODE */
+  .subnav-inner {
+    padding: 16px var(--gutter);
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .menu-toggle { display: block; }
+  /* Drawer becomes a real element on mobile and contains both link groups */
+  .menu-drawer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0; right: 0;
+    top: 100%;
+    background: var(--cream);
+    box-shadow: 0 18px 28px -22px rgba(44,45,54,.22);
+    border-top: 1px solid rgba(44,45,54,.06);
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height .35s cubic-bezier(.7,0,.2,1), opacity .25s, transform .3s;
+  }
+  .subnav.is-open .menu-drawer {
+    max-height: 520px;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .subnav .links,
+  .subnav .right-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 var(--gutter);
+    margin: 0;
+  }
+  .subnav .right-links { border-top: 1px solid rgba(44,45,54,.08); }
+  .subnav .links a,
+  .subnav .right-links a {
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(44,45,54,.07);
+    font-size: 14px;
+    letter-spacing: .25em;
+  }
+  .subnav .links a:last-child,
+  .subnav .right-links a:last-child { border-bottom: 0; }
+}
+@media (max-width: 600px) {
+  .bar-inner { grid-template-columns: 1fr auto; }
+  .bar-right { display: none; }
+  .signin    { display: none; }
+  .foot-inner    { grid-template-columns: 1fr; gap: 28px; }
+  .partners-row  { grid-template-columns: 1fr; gap: 14px; }
+  .quote-text blockquote { font-size: clamp(28px, 7.5vw, 36px); line-height: 1.15; }
+  .threes-head h2 { font-size: clamp(40px, 11vw, 60px); }
+  /* On the tightest screens, drop the decorative leaf entirely — it has no room to breathe */
+  .mission-img .leaf { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Inline SVG filters (used for organic shape brush, etc.) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="brush" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.022" numOctaves="2" seed="3" result="t" />
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="14" />
+    </filter>
+    <filter id="grit">
+      <feTurbulence baseFrequency=".7" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ==================== HEADER ==================== -->
+<header class="bar">
+  <div class="bar-inner">
+    <a href="#" class="signin">Sign In</a>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- two interlocked rings -->
+        <svg viewBox="0 0 80 36" fill="none" stroke="#fff" stroke-width="2.4">
+          <circle cx="26" cy="18" r="14"/>
+          <circle cx="54" cy="18" r="14"/>
+        </svg>
+      </span>
+      <span class="brand-name">lovett</span>
+      <br><br>
+      <span class="brand-tag">Counseling &amp; Consulting · Denver</span>
+    </div>
+    <div class="bar-right">
+      <a href="#" class="icon-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="#" class="icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.32 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.39-2.07-3.39-2.07 0-2.39 1.62-2.39 3.29V22H7.54V8z"/></svg></a>
+      <a href="#" class="icon-link" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== SUBNAV ==================== -->
+<nav class="subnav" id="subnav">
+  <div class="subnav-inner">
+    <div class="menu-drawer">
+      <div class="links">
+        <a href="#hero">Home</a>
+        <a href="#releases">Journal</a>
+        <a href="#mission">About</a>
+        <a href="#contact">Connect</a>
+      </div>
+      <div class="right-links">
+        <a href="#counseling">Therapy</a>
+        <a href="#coaching">Couples + Family</a>
+        <a href="#consulting">Consulting</a>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-controls="subnav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <!-- Snake as a subtle background line-drawing illustration -->
+    <div class="hero-line-art parallax" data-parallax="0.10">
+      <img src="images/decor-snake.png" alt="" />
+    </div>
+
+    <div class="hero-stripe parallax" data-parallax="0.05" aria-hidden="true"></div>
+
+    <div class="hero-blob parallax" data-parallax="-0.12" aria-hidden="true"></div>
+
+    <div class="hero-figure parallax" data-parallax="-0.05">
+      <img src="images/hero-dancers.png" alt="A couple mid-dance in a vintage photograph, raising joined hands toward the sky" />
+    </div>
+
+    <h1 class="hero-headline">
+      Healing starts<br>
+      with feeling<br>
+      <em>seen</em> first.
+    </h1>
+    <p class="hero-sub">Whitney A. Lovett, MA, LPC — trauma-informed therapy and consulting for adults, couples, and families. Warm. Direct. Fourteen years in.</p>
+
+    <div class="hero-cta-row">
+      <a href="#threes" class="btn-frame"><span>Start the work</span></a>
+      <a href="#mission" class="hero-scroll" aria-label="Scroll to next section">
+        Scroll
+        <span class="arrow"><span></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MISSION ==================== -->
+<section class="mission grain" id="mission">
+  <div class="mission-inner">
+    <div class="mission-mark" aria-hidden="true">
+      <svg viewBox="0 0 80 36" fill="none" stroke="currentColor" stroke-width="2.6">
+        <circle cx="26" cy="18" r="14"/>
+        <circle cx="54" cy="18" r="14"/>
+      </svg>
+    </div>
+    <div class="fade-in">
+      <span class="eyebrow">Hi — I'm Whitney</span>
+      <h2>The short version.</h2>
+      <p>Licensed Professional Counselor (MA, LPC) practicing in Denver since 2012. Argosy-trained, Colorado-licensed, fourteen years in the room with adults, couples, and families. Currently online only, available across Colorado.</p>
+      <p>My approach is warm, direct, and trauma-informed &mdash; the kind of therapist who'll sit with you in the hard part and also tell you when it's time to get up. I draw from CBT, DBT, Solution-Focused, and Person-Centered work: practical tools first, deep self-awareness right behind them.</p>
+      <p>I work with anxiety, depression, trauma, life transitions, relationships, grief, parenting, and the postpartum stretch nobody warned you would feel like <em>this</em>. No clipboards. No worksheets that look like the SAT. Just real conversation toward the version of yourself you keep almost reaching.</p>
+    </div>
+
+    <div class="mission-img fade-in">
+      <img class="leaf parallax" data-parallax="-0.08" src="images/decor-leaf.png" alt="" />
+      <div class="stamp">
+        <img src="images/decor-circle.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="mission-strokes" aria-hidden="true">
+    <svg viewBox="0 0 1200 240" preserveAspectRatio="none">
+      <path d="M-50,200 C 300,140 700,100 1300,40" stroke="#ac672a" stroke-width="2" fill="none" opacity=".55" />
+      <path d="M-50,230 C 300,170 700,130 1300,70"  stroke="#ac672a" stroke-width="2" fill="none" opacity=".4" />
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== QUOTE ==================== -->
+<!-- floating sticker (botanical leaf with washi tape) bridging sections -->
+<div class="sticker-bridge" aria-hidden="true">
+  <img class="float-leaf parallax" data-parallax="-0.06" src="images/decor-leaf.png" alt="" style="left: 6%; top: -120px;" />
+</div>
+
+<section class="quote">
+  <div class="quote-inner">
+    <div class="quote-art fade-in">
+      <div class="terra-stroke parallax" data-parallax="-0.06" aria-hidden="true"></div>
+      <div class="hex-mask moon parallax" data-parallax="0.04"></div>
+      <svg class="quote-scribble" viewBox="0 0 200 200" fill="none" stroke="#6b8aa3" stroke-width="2" aria-hidden="true">
+        <path d="M30,140 C 60,90 140,90 170,140 C 140,180 60,180 30,140 Z"/>
+        <path d="M50,130 C 80,100 120,100 150,130" stroke-dasharray="3 4"/>
+      </svg>
+    </div>
+    <div class="quote-text fade-in">
+      <span class="eyebrow" style="margin-bottom: 18px; display:block;">From a colleague</span>
+      <blockquote>&ldquo;I consistently admire the care and intention Whitney brings to her work. She creates a space where people feel genuinely seen, heard, and understood.&rdquo;</blockquote>
+      <cite>— Bronwyn Hockersmith, MA, LPC</cite>
+    </div>
+  </div>
+
+  <!-- vintage running figure peeking from the side -->
+  <img class="runner parallax" data-parallax="-0.18" src="images/decor-figure.png" alt="" />
+</section>
+
+<!-- ==================== THREE C'S ==================== -->
+<section class="threes" id="threes">
+  <img class="threes-flower parallax" data-parallax="-0.15" src="images/decor-flower.png" alt="" />
+
+  <header class="threes-head fade-in">
+    <span class="eyebrow">Three ways in</span>
+    <h2>How I work.</h2>
+    <p>Pick the one that fits where you are right now.</p>
+    <a href="#contact" class="btn-frame" style="margin-top: 8px;"><span>Book a free 15-min call</span></a>
+  </header>
+
+  <div class="threes-grid">
+
+    <article class="cee fade-in" id="counseling">
+      <span class="cee-num">i.</span>
+      <h3>Individual Therapy</h3>
+      <p>For adults navigating anxiety, depression, trauma, grief, life transitions, body image, codependency, self-esteem, or the kind of stuck that's hard to name out loud. CBT, DBT, Solution-Focused, and Person-Centered work, depending on what the moment asks for.</p>
+      <p>$175 per session · sliding scale available · superbills provided for out-of-network reimbursement.</p>
+      <a class="more" href="#">More about therapy</a>
+    </article>
+
+    <article class="cee fade-in" id="coaching">
+      <span class="cee-num">ii.</span>
+      <h3>Couples &amp; Family</h3>
+      <p>Couples work, marital and pre-marital, family conflict, divorce, parenting, and the postpartum chapter that catches most people sideways. We slow the loop down, name what's actually being said underneath the argument, and build the kind of communication that survives a Tuesday.</p>
+      <p>$200 per session · families and parents welcome · trauma-informed throughout.</p>
+      <a class="more" href="#">More about couples + family</a>
+    </article>
+
+    <article class="cee fade-in" id="consulting">
+      <span class="cee-num">iii.</span>
+      <h3>Consulting &amp; Supervision</h3>
+      <p>Clinical supervision for LPC candidates (Colorado-certified, 6-hour LPC supervision certified through CCA, 2024). Plus consulting for organizations and practitioners thinking carefully about culture, communication, and the human side of how their work gets done.</p>
+      <p>By inquiry · individual + group supervision · short engagements welcome.</p>
+      <a class="more" href="#">More about consulting</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==================== NEW RELEASES (parallax fixed-bg) ==================== -->
+<section class="releases" id="releases">
+  <div class="releases-inner">
+    <div class="releases-head fade-in">
+      <h2>New releases.</h2>
+      <a href="#" class="all">View all the journal →</a>
+    </div>
+
+    <div class="releases-grid">
+
+      <a href="#" class="post fade-in">
+        <div class="post-img" style="background-image: linear-gradient(rgba(44,45,54,.1), rgba(44,45,54,.3)), url('images/bg-sky.jpg'); background-position: center 30%;"></div>
+        <div class="post-body">
+          <div class="date">Mar 4, 2026</div>
+          <h4>What "trauma-informed" actually means in the room</h4>
+          <p>It's not a buzzword and it's not a checklist. A short note on what the phrase means in practice — and what it shouldn't be doing for you.</p>
+          <span class="read">Read more</span>
+        </div>
+      </a>
+
+      <a href="#" class="post fade-in">
+        <div class="post-img" style="background-image: linear-gradient(rgba(44,45,54,.15), rgba(44,45,54,.35)), url('images/bg-floral.jpg'); background-position: center 25%;"></div>
+        <div class="post-body">
+          <div class="date">Jan 18, 2026</div>
+          <h4>Postpartum mental health: the part nobody warned you about</h4>
+          <p>The fourth trimester is a real thing, and the gap between "baby blues" and clinical postpartum depression is wider — and more livable — than most new parents are told.</p>
+          <span class="read">Read more</span>
+        </div>
+      </a>
+
+      <a href="#" class="post fade-in">
+        <div class="post-img" style="background-image: linear-gradient(rgba(44,45,54,.18), rgba(44,45,54,.45)), url('images/decor-flower.png'); background-color: #6b5836; background-position: center;"></div>
+        <div class="post-body">
+          <div class="date">Nov 11, 2025</div>
+          <h4>CBT vs. DBT: which one, when, and why I usually use both</h4>
+          <p>A plain-English breakdown of two of the most-named therapy modalities — what each is good for, what each is bad for, and how they tend to work together in real practice.</p>
+          <span class="read">Read more</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESS ==================== -->
+<section class="process">
+  <div class="process-bg parallax" data-parallax="0.08" aria-hidden="true"></div>
+  <div class="process-inner fade-in">
+    <span class="eyebrow">No mystery, no homework packets</span>
+    <h2>How this works.</h2>
+    <p class="sub">Reach out · Get to it · Keep going</p>
+
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="dot">i.</div>
+        <h3>The first call</h3>
+        <ul>
+          <li>Fifteen minutes, free, no pitch deck and no pressure</li>
+          <li>You tell me what's loud, what's stuck, and what you've already tried</li>
+          <li>I tell you honestly whether I'm the right person for this — or who is</li>
+        </ul>
+      </div>
+      <div class="step fade-in">
+        <div class="dot">ii.</div>
+        <h3>The actual work</h3>
+        <ul>
+          <li>Weekly, biweekly, or monthly — whatever fits your real life</li>
+          <li>Online sessions across Colorado, scheduled around your week</li>
+          <li>Goals written in plain language and revisited like they matter</li>
+        </ul>
+      </div>
+      <div class="step fade-in">
+        <div class="dot">iii.</div>
+        <h3>The keep-going</h3>
+        <ul>
+          <li>Every 8–12 weeks we zoom out and check the map against the territory</li>
+          <li>Recalibrate when life rearranges itself, because it always does</li>
+          <li>Graduate when you're ready, with a kit you actually know how to use</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-art fade-in">
+      <div class="contact-figure parallax" data-parallax="-0.04">
+        <img src="images/decor-figure.png" alt="" />
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <span class="eyebrow">Reach out</span>
+      <h2>Let's<br>actually talk.</h2>
+      <p class="lede">Call, email, or drop a note below. I read every message myself and I'll write back inside one business day &mdash; sometimes faster, occasionally on a Sunday. (I have boundaries. They're just flexible.)</p>
+
+      <ul class="contact-meta">
+        <li><strong>Call</strong><a href="tel:+17207417388">(720) 741-7388</a><small>Free 15-min consult</small></li>
+        <li><strong>Where</strong><span>Denver, CO 80203</span><small>Online across Colorado</small></li>
+        <li><strong>Fees</strong><span>$175 individual · $200 couples</span><small>Sliding scale available · superbills provided</small></li>
+      </ul>
+
+
+      <form onsubmit="event.preventDefault(); alert('Thanks — Whitney will be in touch within one business day.');">
+        <div>
+          <label for="fn">First Name</label>
+          <input id="fn" type="text" required>
+        </div>
+        <div>
+          <label for="ln">Last Name</label>
+          <input id="ln" type="text" required>
+        </div>
+        <div class="field-full">
+          <label for="co">Company (optional)</label>
+          <input id="co" type="text">
+        </div>
+        <div class="field-full">
+          <label for="em">Email Address</label>
+          <input id="em" type="email" required>
+        </div>
+        <div class="field-full">
+          <label for="topic">What would you like to work on?</label>
+          <select id="topic">
+            <option>Anxiety</option>
+            <option>Depression</option>
+            <option>Relationships</option>
+            <option>Trauma / PTSD</option>
+            <option>Life transitions</option>
+            <option>Grief</option>
+            <option>Couples therapy</option>
+            <option>Family conflict</option>
+            <option>Parenting</option>
+            <option>Pregnancy / postpartum</option>
+            <option>Self-esteem / body image</option>
+            <option>Clinical supervision (LPC candidates)</option>
+            <option>Organizational consulting</option>
+            <option>Other (describe below)</option>
+          </select>
+        </div>
+        <div class="field-full">
+          <label for="msg">How can we help you?</label>
+          <textarea id="msg"></textarea>
+        </div>
+        <button type="submit" class="send">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PARTNERS ==================== -->
+<section class="partners">
+  <h3>A few clients + partners</h3>
+  <div class="partners-row">
+    <div class="client">Marlowe &amp; Co.<small>Boutique law</small></div>
+    <div class="client">North Branch Studio<small>Design</small></div>
+    <div class="client">Hearth + Home<small>Nonprofit</small></div>
+    <div class="client">Quarterly Press<small>Publishing</small></div>
+    <div class="client">Field Notes Co-op<small>Education</small></div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="lockup">lovett.</div>
+      <p class="blurb">Lovett Counseling &amp; Consulting. Whitney A. Lovett, MA, LPC. Trauma-informed therapy and consulting based in Denver, online across Colorado. Licensed by the State of Colorado · LPC.0012494.</p>
+    </div>
+    <div>
+      <h4>Work</h4>
+      <ul>
+        <li><a href="#counseling">Individual Therapy</a></li>
+        <li><a href="#coaching">Couples + Family</a></li>
+        <li><a href="#consulting">Consulting + Supervision</a></li>
+        <li><a href="#contact">Free 15-min call</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Read</h4>
+      <ul>
+        <li><a href="#releases">Journal</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="tel:+17207417388">(720) 741-7388</a></li>
+        <li><a href="#contact">Email Whitney</a></li>
+        <li><a href="https://www.psychologytoday.com/us/therapists/whitney-a-lovett-denver-co/267155" target="_blank" rel="noopener">Psychology Today</a></li>
+        <li><a href="#contact">Free 15-min consult</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-inner foot-bottom">
+    <span>© Whitney A. Lovett, MA, LPC · 2026</span>
+    <span>Denver, CO 80203 · Online across Colorado</span>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   PARALLAX (rAF-throttled) — moves any [data-parallax] element by
+   y * speed where y is window scroll. Negative speeds = move with scroll
+   slower than viewport (drift down). Positive = drift up.
+   ===================================================================== */
+(function () {
+  const els = Array.from(document.querySelectorAll('[data-parallax]'));
+  if (!els.length) return;
+  let ticking = false;
+  function update() {
+    const y = window.scrollY || window.pageYOffset;
+    els.forEach(el => {
+      const s = parseFloat(el.dataset.parallax) || 0;
+      el.style.transform = `translate3d(0, ${ (y * s).toFixed(2) }px, 0)`;
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
+})();
+
+/* =====================================================================
+   FADE-IN ON SCROLL
+   ===================================================================== */
+(function () {
+  const targets = document.querySelectorAll('.fade-in');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(t => t.classList.add('is-visible'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(t => obs.observe(t));
+})();
+
+/* =====================================================================
+   SUBNAV: shadow on scroll past the terracotta bar
+   ===================================================================== */
+(function () {
+  const nav = document.getElementById('subnav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 14 && !nav.classList.contains('is-stuck')) nav.classList.add('is-stuck');
+    else if (y <= 14 && nav.classList.contains('is-stuck')) nav.classList.remove('is-stuck');
+  }, { passive: true });
+})();
+
+/* =====================================================================
+   MOBILE MENU
+   ===================================================================== */
+(function () {
+  const nav = document.getElementById('subnav');
+  const btn = document.getElementById('menuToggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close drawer when an item is tapped
+  nav.querySelectorAll('.menu-drawer a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Close on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
